@@ -190,10 +190,14 @@ export default function SurprisePage({ onBack, isUnlocked, sectionsRemaining }: 
                   <span aria-hidden="true">✦</span>
                 </button>
               </div>
+              <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
 
             </div>
           ) : (
-            <LockedSection sectionsRemaining={sectionsRemaining} />
+            <>
+              <LockedSection sectionsRemaining={sectionsRemaining} />
+              <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
+            </>
           )}
         </PageWrapper>
       </div>

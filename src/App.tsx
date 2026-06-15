@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { PageId } from './types'
 
+import PasswordGate, { checkStoredAuth } from './components/PasswordGate'
 import EntrancePage from './pages/EntrancePage'
 import MainPage from './pages/MainPage'
 import OurStoryPage from './pages/OurStoryPage'
@@ -22,8 +23,17 @@ const UNLOCKABLE_SECTIONS: PageId[] = [
 ]
 
 export default function App() {
+  const [authed, setAuthed] = useState<boolean>(checkStoredAuth)
   const [currentPage, setCurrentPage] = useState<PageId>('entrance')
   const [visitedPages, setVisitedPages] = useState<Set<PageId>>(new Set())
+
+  if (!authed) {
+    return (
+      <div className="app">
+        <PasswordGate onUnlock={() => setAuthed(true)} />
+      </div>
+    )
+  }
 
   const navigate = (page: PageId) => {
     setVisitedPages(prev => new Set([...prev, page]))

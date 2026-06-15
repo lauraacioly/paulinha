@@ -53,6 +53,7 @@ export default function CinemaPage({ onBack }: CinemaPageProps) {
           />
         ))}
       </div>
+      <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
 
       {selected && (
         <div className="movie-modal-overlay" onClick={closeModal}>

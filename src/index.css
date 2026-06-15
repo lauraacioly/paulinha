@@ -808,6 +808,55 @@ img {
   box-shadow: 0 4px 16px rgba(139, 58, 74, 0.2);
 }
 
+/* Variante inferior — aparece no final de cada página interna */
+.back-button--bottom {
+  display: flex;
+  margin: 52px auto 0;
+  background: var(--wine);
+  border-color: var(--wine);
+  color: white;
+  box-shadow: 0 4px 16px rgba(139, 58, 74, 0.22);
+}
+
+.back-button--bottom:hover {
+  background: #9e3d52;
+  border-color: #9e3d52;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(139, 58, 74, 0.32);
+}
+
+/* Memórias (fundo escuro) — adapta cor do botão inferior */
+.pw-memories .back-button--bottom {
+  background: rgba(139, 58, 74, 0.55);
+  border-color: rgba(246, 214, 214, 0.5);
+  color: var(--rose-light);
+}
+
+.pw-memories .back-button--bottom:hover {
+  background: rgba(139, 58, 74, 0.8);
+  border-color: rgba(246, 214, 214, 0.8);
+  color: white;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .back-button--bottom {
+    min-height: 48px;
+    font-size: 0.9rem;
+    padding: 14px 28px;
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button--bottom {
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+
 /* ── NOSSA HISTÓRIA ──────────────────────────────────────────── */
 
 .chapters {
@@ -2885,5 +2934,440 @@ img {
   }
   .sp-cl-sig2 {
     font-size: 2.4rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVIDADE MOBILE — complemento para 390px / 430px
+   Completa os breakpoints existentes sem sobrescrever o que
+   já funciona, focando nas lacunas identificadas.
+═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Tela de entrada: menos espaço lateral em tablet/mobile */
+  .entrance-page {
+    padding: 28px 20px;
+  }
+
+  /* Cabeçalho da página principal: mais compacto */
+  .main-header {
+    padding: 36px 20px 8px;
+  }
+
+  /* Botão voltar — área de toque mínima (44px) */
+  .back-button {
+    min-height: 44px;
+    padding: 12px 22px;
+    touch-action: manipulation;
+  }
+
+  /* Botões principais — tappable no celular */
+  .yes-button,
+  .no-button,
+  .letter-continue-btn,
+  .enter-btn {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  /* Confirmação de entrada: reduz levemente */
+  .entrance-confirmed p {
+    font-size: 2.4rem;
+  }
+  .entrance-confirmed {
+    gap: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tela de entrada */
+  .entrance-page {
+    padding: 20px 14px;
+  }
+
+  /* Cabeçalho da página principal */
+  .main-header {
+    padding: 22px 16px 8px;
+  }
+
+  /* Título de páginas internas */
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  /* Capítulos mais compactos (Nossa História) */
+  .chapter-title {
+    font-size: 1.4rem;
+  }
+  .chapter {
+    padding: 16px 14px;
+  }
+  .chapter-text {
+    font-size: 0.9rem;
+  }
+
+  /* ── Galeria de fotos: 2 colunas em telas pequenas ── */
+  .memories-gallery {
+    columns: 2 90px;
+    column-gap: 4px;
+  }
+
+  /* ── Post-its (Tudo Me Lembra Você) ── */
+  .reminds-grid {
+    gap: 24px 12px;
+  }
+  .reminds-item {
+    min-height: 110px;
+    padding: 18px 10px 14px;
+  }
+
+  /* ── Post-its (Coisas Que Eu Amo) ── */
+  .pw-things .things-list {
+    gap: 24px 12px;
+  }
+  .pw-things .things-item {
+    min-height: 110px;
+    padding: 18px 10px 14px;
+  }
+
+  /* Cinema: subtítulo menor */
+  .cinema-subtitle {
+    font-size: 0.92rem;
+    margin: -4px 0 28px;
+  }
+
+  /* Surpresa final: mais compacta */
+  .surprise-content {
+    padding: 24px 16px 28px;
+    margin-top: 16px;
+  }
+
+  /* Seção bloqueada */
+  .locked-section {
+    padding: 32px 18px;
+  }
+  .locked-section h2 {
+    font-size: 1.9rem;
+  }
+
+  /* Botão voltar: ainda tappable mas mais compacto */
+  .back-button {
+    min-height: 44px;
+    padding: 11px 18px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  /* Lightbox — setas mais próximas das bordas */
+  .lightbox-backdrop {
+    padding: 12px 50px;
+  }
+
+  /* Modal de Tudo Me Lembra */
+  .reminds-modal {
+    padding: 32px 20px 24px;
+  }
+
+  /* Modal de Coisas Que Eu Amo */
+  .thing-modal {
+    padding: 40px 20px 24px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TELA DE SENHA — PasswordGate
+═══════════════════════════════════════════════════════════ */
+
+.pg-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background:
+    radial-gradient(ellipse 90% 55% at 8% 0%,   rgba(255, 210, 222, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 55% at 92% 100%, rgba(248, 198, 212, 0.5)  0%, transparent 55%),
+    radial-gradient(ellipse 50% 45% at 50% 50%,  rgba(255, 225, 232, 0.3)  0%, transparent 62%),
+    linear-gradient(165deg, #fdf4f7 0%, #fae8ef 45%, #f6dae4 100%);
+  animation: pg-appear 0.7s ease both;
+  transition: opacity 0.82s cubic-bezier(0.4, 0, 1, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Corações de fundo vaporosos — mesmo estilo da entrance-page */
+.pg-bg-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pg-bg-hearts::before {
+  content: "♥";
+  position: absolute;
+  top: -2%;
+  left: 3%;
+  font-size: 18rem;
+  color: rgba(216, 90, 106, 0.032);
+  animation: float 22s ease-in-out infinite;
+  line-height: 1;
+}
+.pg-bg-hearts::after {
+  content: "♥";
+  position: absolute;
+  bottom: 5%;
+  right: 4%;
+  font-size: 10rem;
+  color: rgba(216, 90, 106, 0.025);
+  animation: float 16s ease-in-out infinite reverse;
+  line-height: 1;
+}
+
+/* Estado de desbloqueio: fade para branco → transição suave */
+.pg-unlocking {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes pg-appear {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Card central ───────────────────────────────────────── */
+
+.pg-card {
+  background: white;
+  border-radius: 24px;
+  padding: 52px 48px 44px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(218, 188, 195, 0.42);
+  box-shadow:
+    0 4px 20px rgba(200, 140, 150, 0.1),
+    0 18px 56px rgba(180, 120, 132, 0.14),
+    0 40px 96px rgba(160, 100, 118, 0.08);
+  animation: pg-card-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+  z-index: 1;
+}
+
+/* Filete de cor no topo */
+.pg-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(216, 90, 106, 0.35) 30%,
+    rgba(216, 90, 106, 0.35) 70%,
+    transparent
+  );
+}
+
+/* Coração lacre no centro do filete */
+.pg-card::after {
+  content: "♥";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  color: rgba(216, 90, 106, 0.42);
+  line-height: 1;
+  pointer-events: none;
+}
+
+@keyframes pg-card-in {
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* Animação de erro — chacoalha o card */
+.pg-shake {
+  animation: pg-shake 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+
+@keyframes pg-shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-9px); }
+  30%       { transform: translateX(7px); }
+  45%       { transform: translateX(-6px); }
+  60%       { transform: translateX(5px); }
+  75%       { transform: translateX(-3px); }
+  90%       { transform: translateX(2px); }
+}
+
+/* ── Elementos do card ──────────────────────────────────── */
+
+.pg-ornament {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(216, 90, 106, 0.45);
+  letter-spacing: 0.6em;
+  margin: 0 0 22px;
+}
+
+.pg-envelope {
+  display: block;
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 22px;
+  animation: pg-float 5s ease-in-out infinite;
+}
+
+@keyframes pg-float {
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(-8px); }
+}
+
+.pg-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--brown-dark);
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.pg-subtitle {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--brown-light);
+  line-height: 1.55;
+  margin: 0 0 32px;
+}
+
+/* ── Formulário ─────────────────────────────────────────── */
+
+.pg-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.pg-input {
+  width: 100%;
+  padding: 14px 22px;
+  border: 1.5px solid rgba(218, 188, 195, 0.65);
+  border-radius: 100px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: var(--brown-dark);
+  text-align: center;
+  background: rgba(255, 248, 246, 0.7);
+  outline: none;
+  letter-spacing: 0.18em;
+  transition: border-color 0.28s ease, box-shadow 0.28s ease;
+  margin-bottom: 12px;
+}
+
+.pg-input::placeholder {
+  color: var(--brown-light);
+  letter-spacing: 0.04em;
+  font-style: italic;
+  font-size: 0.88rem;
+}
+
+.pg-input:focus {
+  border-color: rgba(216, 90, 106, 0.48);
+  box-shadow: 0 0 0 3px rgba(216, 90, 106, 0.08);
+}
+
+.pg-input--error {
+  border-color: rgba(216, 90, 106, 0.55);
+  box-shadow: 0 0 0 3px rgba(216, 90, 106, 0.1);
+}
+
+/* Reserva espaço fixo para o erro — evita salto de layout */
+.pg-error-slot {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.pg-error {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.83rem;
+  font-style: italic;
+  color: var(--red-soft);
+  line-height: 1.4;
+  margin: 0;
+  animation: pg-error-in 0.3s ease both;
+}
+
+@keyframes pg-error-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.pg-btn {
+  background: var(--wine);
+  color: white;
+  padding: 15px 52px;
+  border-radius: 100px;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  min-height: 50px;
+  touch-action: manipulation;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 2px 6px rgba(139, 58, 74, 0.12),
+    0 8px 24px rgba(139, 58, 74, 0.2);
+}
+
+.pg-btn:hover {
+  background: #9e3d52;
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 10px rgba(139, 58, 74, 0.16),
+    0 14px 36px rgba(139, 58, 74, 0.26);
+}
+
+.pg-btn:active {
+  transform: translateY(-1px);
+}
+
+.pg-hint {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.74rem;
+  font-style: italic;
+  color: rgba(154, 122, 122, 0.48);
+  margin: 28px 0 0;
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pg-screen {
+    padding: 24px 16px;
+  }
+  .pg-card {
+    padding: 44px 28px 38px;
+    border-radius: 20px;
+  }
+  .pg-title {
+    font-size: 1.55rem;
+  }
+  .pg-btn {
+    padding: 15px 36px;
+    width: 100%;
   }
 }

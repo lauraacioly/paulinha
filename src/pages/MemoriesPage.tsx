@@ -66,6 +66,7 @@ export default function MemoriesPage({ onBack }: MemoriesPageProps) {
           </div>
         ))}
       </div>
+      <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
 
       {lightboxIndex !== null && (
         <div className="lightbox-backdrop" onClick={closeLightbox}>

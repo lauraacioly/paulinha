@@ -28,6 +28,7 @@ export default function ThingsILovePage({ onBack }: ThingsILovePageProps) {
           </button>
         ))}
       </div>
+      <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
 
       {selectedThing && (
         <div className="thing-modal-backdrop" onClick={() => setSelectedThing(null)}>

@@ -39,6 +39,7 @@ export default function RemindsMePage({ onBack }: RemindsMePageProps) {
           )
         })}
       </div>
+      <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
 
       {selected && (
         <div

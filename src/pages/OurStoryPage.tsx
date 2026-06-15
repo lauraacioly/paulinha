@@ -21,6 +21,7 @@ export default function OurStoryPage({ onBack }: OurStoryPageProps) {
           </div>
         ))}
       </div>
+      <BackButton onBack={onBack} label="← Voltar para o início" className="back-button--bottom" />
     </PageWrapper>
   )
 }
