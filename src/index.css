@@ -3379,13 +3379,14 @@ img {
    Desktop não é alterado.
 ═══════════════════════════════════════════════════════════ */
 
-/* Tablet — começa a reduzir o coração de fundo */
+/* Tablet — reduz coração da entrada; esconde completamente os da senha */
 @media (max-width: 768px) {
   .entrance-page::before {
     font-size: 9rem;
   }
-  .pg-bg-hearts::before {
-    font-size: 9rem;
+  /* Oculta os corações grandes de fundo da tela de senha no mobile */
+  .pg-bg-hearts {
+    display: none;
   }
 }
 
@@ -3398,13 +3399,6 @@ img {
 
   /* Coração decorativo gigante do fundo — reduz para ficar proporcional */
   .entrance-page::before {
-    font-size: 5rem;
-    top: -1%;
-    left: 2%;
-  }
-
-  /* Mesmo fix para o coração da tela de senha */
-  .pg-bg-hearts::before {
     font-size: 5rem;
     top: -1%;
     left: 2%;
