@@ -3392,3 +3392,13 @@ img {
     font-size: 0.82rem;
   }
 }
+
+@media (max-width: 768px) {
+  .entrance-page::before,
+  .entrance-page::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
