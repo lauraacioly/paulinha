@@ -28,9 +28,6 @@ export default function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 
   return (
     <div className={`pg-screen${unlocking ? ' pg-unlocking' : ''}`}>
-      {/* Corações de fundo — mesmo estilo da entrance-page */}
-      <div aria-hidden="true" className="pg-bg-hearts" />
-
       <div className={`pg-card${shaking ? ' pg-shake' : ''}`}>
         <p className="pg-ornament">✦  ♥  ✦</p>
 

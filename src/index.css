@@ -3096,33 +3096,6 @@ img {
   overflow: hidden;
 }
 
-/* Corações de fundo vaporosos — mesmo estilo da entrance-page */
-.pg-bg-hearts {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.pg-bg-hearts::before {
-  content: "♥";
-  position: absolute;
-  top: -2%;
-  left: 3%;
-  font-size: 18rem;
-  color: rgba(216, 90, 106, 0.032);
-  animation: float 22s ease-in-out infinite;
-  line-height: 1;
-}
-.pg-bg-hearts::after {
-  content: "♥";
-  position: absolute;
-  bottom: 5%;
-  right: 4%;
-  font-size: 10rem;
-  color: rgba(216, 90, 106, 0.025);
-  animation: float 16s ease-in-out infinite reverse;
-  line-height: 1;
-}
-
 /* Estado de desbloqueio: fade para branco → transição suave */
 .pg-unlocking {
   opacity: 0;
@@ -3383,10 +3356,6 @@ img {
 @media (max-width: 768px) {
   .entrance-page::before {
     font-size: 9rem;
-  }
-  /* Oculta os corações grandes de fundo da tela de senha no mobile */
-  .pg-bg-hearts {
-    display: none;
   }
 }
 
