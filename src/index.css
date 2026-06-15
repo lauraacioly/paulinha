@@ -3371,3 +3371,61 @@ img {
     width: 100%;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   TELA DE ENTRADA — Correções Mobile
+   Proporciona o mesmo visual do desktop adaptado ao celular:
+   card centralizado e compacto, coração decorativo discreto.
+   Desktop não é alterado.
+═══════════════════════════════════════════════════════════ */
+
+/* Tablet — começa a reduzir o coração de fundo */
+@media (max-width: 768px) {
+  .entrance-page::before {
+    font-size: 9rem;
+  }
+  .pg-bg-hearts::before {
+    font-size: 9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  /* Viewport dinâmico — evita que a barra do browser corte o conteúdo */
+  .entrance-page {
+    min-height: 100dvh;
+  }
+
+  /* Coração decorativo gigante do fundo — reduz para ficar proporcional */
+  .entrance-page::before {
+    font-size: 5rem;
+    top: -1%;
+    left: 2%;
+  }
+
+  /* Mesmo fix para o coração da tela de senha */
+  .pg-bg-hearts::before {
+    font-size: 5rem;
+    top: -1%;
+    left: 2%;
+  }
+
+  /* Card da cartinha fechada — compacto e bem centralizado */
+  .letter-closed {
+    width: min(82vw, 300px);
+    max-width: min(82vw, 300px);
+    padding: 40px 28px 34px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  /* Emoji do envelope — menos dominante na tela */
+  .letter-icon {
+    font-size: 2.2rem;
+  }
+
+  /* Texto do card — levemente menor */
+  .letter-closed span:last-child {
+    font-size: 0.82rem;
+  }
+}

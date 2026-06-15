@@ -5,9 +5,6 @@ import { useState } from 'react'
 const SITE_PASSWORD = "tomsinho"
 // ──────────────────────────────────────────────
 
-export function checkStoredAuth(): boolean {
-  return false
-}
 
 export default function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const [value, setValue]       = useState('')
