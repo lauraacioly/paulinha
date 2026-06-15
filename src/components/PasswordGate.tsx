@@ -5,10 +5,8 @@ import { useState } from 'react'
 const SITE_PASSWORD = "tomsinho"
 // ──────────────────────────────────────────────
 
-const STORAGE_KEY = 'paulinha_auth'
-
 export function checkStoredAuth(): boolean {
-  return localStorage.getItem(STORAGE_KEY) === '1'
+  return false
 }
 
 export default function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
@@ -20,7 +18,6 @@ export default function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const tryPassword = (e: React.FormEvent) => {
     e.preventDefault()
     if (value.trim().toLowerCase() === SITE_PASSWORD.toLowerCase()) {
-      localStorage.setItem(STORAGE_KEY, '1')
       setUnlocking(true)
       setTimeout(onUnlock, 820)
     } else {
