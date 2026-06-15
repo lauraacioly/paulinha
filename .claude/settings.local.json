@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(Get-ChildItem -Recurse -Force)",
+      "Bash(select-object FullName, PSIsContainer)",
+      "Bash(sort-object FullName)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\ana_l\\\\Desktop\\\\paulinha\" -Depth 3 -Force | Where-Object { $_.FullName -notmatch 'node_modules|dist' } | Select-Object FullName, PSIsContainer | Sort-Object FullName)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\ana_l\\\\Desktop\\\\paulinha\\\\src\\\\pages\\\\LettersPage.tsx\" -Force)",
+      "Bash(rm \"c:/Users/ana_l/Desktop/paulinha/src/pages/LettersPage.tsx\")",
+      "Bash(Get-ChildItem -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "WebSearch"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\ana_l\\Desktop\\paulinha\\src\\pages"
+    ]
+  }
+}
