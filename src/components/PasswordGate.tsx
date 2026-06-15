@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 // ──────────────────────────────────────────────
 // Altere aqui para mudar a senha do site
-const SITE_PASSWORD = "momo"
+const SITE_PASSWORD = "tomsinho"
 // ──────────────────────────────────────────────
 
 const STORAGE_KEY = 'paulinha_auth'
